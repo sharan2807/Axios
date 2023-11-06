@@ -66,32 +66,32 @@ function showUserOnScreen(Obj){
   
        
     }
-    // const editButton=document.createElement('input')
-    // editButton.type='button'
-    // editButton.value='EDIT'
-    // editButton.onclick=()=>{
-    //     // localStorage.removeItem(Obj.EMAIL)  //same as delete button 
-    //     axios.put(`https://crudcrud.com/api/a0249748201b4a11ae7719efa38fbc78/appointmentData/${Obj._id}`,{
-    //         NAME:document.getElementById('NameInputTag').value,  //to set these values to name,email &phone from input boxes/tags
-    //         EMAIL:document.getElementById('EmailInputTag').value,
-    //         PHONE:document.getElementById('PhoneInputTag').value
-    //     })
-    //     .then((response)=>{
-    //         // console.log(response.data); 
-    //         parent.removeChild(child)  // removing that particular li element fron the screen
-    //         document.getElementById('NameInputTag').value=Obj.NAME //populating the name into the input box
-    //         document.getElementById('EmailInputTag').value=Obj.EMAIL
-    //         document.getElementById('PhoneInputTag').value=Obj.PHONE
-    //     })
-    //     .catch((err)=>{
-    //         console.log(err);
-    //     })
-    //     // parent.removeChild(child)   //same as delete button 
+    const editButton=document.createElement('input')
+    editButton.type='button'
+    editButton.value='EDIT'
+    editButton.onclick=()=>{
+        // localStorage.removeItem(Obj.EMAIL)  //same as delete button 
+        axios.put(`https://crudcrud.com/api/a0249748201b4a11ae7719efa38fbc78/AxiosData/${Obj._id}`,{
+            NAME:document.getElementById('NameInputTag').value,  //to set these values to name,email &phone from input boxes/tags
+            EMAIL:document.getElementById('EmailInputTag').value,
+            PHONE:document.getElementById('PhoneInputTag').value
+        })
+        .then((response)=>{
+            // console.log(response.data); 
+            parent.removeChild(child)  // removing that particular li element fron the screen
+            document.getElementById('NameInputTag').value=Obj.NAME //populating the name into the input box
+            document.getElementById('EmailInputTag').value=Obj.EMAIL
+            document.getElementById('PhoneInputTag').value=Obj.PHONE
+        })
+        .catch((err)=>{
+            console.log(err);
+        })
+        // parent.removeChild(child)   //same as delete button 
      
-    // }
+    }
 
 
-    // child.appendChild(editButton);
+    child.appendChild(editButton);
     child.appendChild(deleteButton);
     parent.appendChild(child);
 }
