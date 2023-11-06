@@ -48,24 +48,24 @@ function showUserOnScreen(Obj){
     let child=document.createElement('li') //creating a new list element
     child.textContent=Obj.NAME +' - '+ Obj.EMAIL +' - '+ Obj.PHONE +'  '  //taking values from Object 'Obj' to show on screen
 
-    // const deleteButton= document.createElement('input')
-    // deleteButton.type="button"
-    // deleteButton.value="DELETE"
-    // deleteButton.onclick=()=>{
-    //     // localStorage.removeItem(Obj.EMAIL) //removing the entire object from local storage
-    //     // console.log(Obj._id)  
-    //     let deletedElem=Obj._id;
-    //     axios.delete(`https://crudcrud.com/api/a0249748201b4a11ae7719efa38fbc78/appointmentData/${deletedElem}`)
-    //     .then((response)=>{
-    //         // console.log(response.data); 
-    //         parent.removeChild(child)  // removing that particular li element fron the screen
-    //     })
-    //     .catch((err)=>{
-    //         console.log(err);
-    //     })
+    const deleteButton= document.createElement('input')
+    deleteButton.type="button"
+    deleteButton.value="DELETE"
+    deleteButton.onclick=()=>{
+        // localStorage.removeItem(Obj.EMAIL) //removing the entire object from local storage
+        // console.log(Obj._id)  
+        let deletedElem=Obj._id;
+        axios.delete(`https://crudcrud.com/api/a0249748201b4a11ae7719efa38fbc78/AxiosData/${deletedElem}`)
+        .then((response)=>{
+            // console.log(response.data); 
+            parent.removeChild(child)  // removing that particular li element fron the screen
+        })
+        .catch((err)=>{
+            console.log(err);
+        })
   
        
-    // }
+    }
     // const editButton=document.createElement('input')
     // editButton.type='button'
     // editButton.value='EDIT'
@@ -92,6 +92,6 @@ function showUserOnScreen(Obj){
 
 
     // child.appendChild(editButton);
-    // child.appendChild(deleteButton);
+    child.appendChild(deleteButton);
     parent.appendChild(child);
 }
