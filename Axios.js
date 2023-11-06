@@ -28,19 +28,19 @@ function saveCrudCrud(event){
     // localStorage.setItem(Obj.EMAIL,JSON.stringify(Obj))
     // showUserOnScreen(Obj);
 }
-// window.addEventListener("DOMContentLoaded",()=>{
-//     axios.get("https://crudcrud.com/api/a0249748201b4a11ae7719efa38fbc78/AxiosData")
-//         .then((response)=>{
-//             console.log(response); 
-//             //On logging the response we see that the data is in the form of an Array of Objects
-//             for(var i=0;i<response.data.length;i++){  //going through the Array of Objects
-//                 showUserOnScreen(response.data[i]);   //Showing each element of the array[basically each object]
-//             }
-//         })
-//         .catch((err)=>{
-//             console.log(err);
-//         })
-// })
+window.addEventListener("DOMContentLoaded",()=>{
+    axios.get("https://crudcrud.com/api/a0249748201b4a11ae7719efa38fbc78/AxiosData")
+        .then((response)=>{
+            console.log(response); 
+            //On logging the response we see that the data is in the form of an Array of Objects
+            for(var i=0;i<response.data.length;i++){  //going through the Array of Objects
+                showUserOnScreen(response.data[i]);   //Showing each element of the array[basically each object]
+            }
+        })
+        .catch((err)=>{
+            console.log(err);
+        })
+})
 
 
 function showUserOnScreen(Obj){
