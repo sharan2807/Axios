@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AXIOS</title>
+</head>
+<body>
+    <form onsubmit="saveCrudCrud(event)">
+        <label>Name:</label>
+        <input type="text" name="username" required id="NameInputTag"/>
+        <label>Email Id:</label>
+        <input type="email" name="email" required id="EmailInputTag"/>
+        <label>Phone No. :</label>
+        <input type="number" name="phone" id="PhoneInputTag"/>
+        <button>Submit</button>
+    </form>
+    <ul id="listOfItems"></ul>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
+    <script src="Axios.js"></script>
+</body>
+</html>
